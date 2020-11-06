@@ -99,7 +99,9 @@ a:hover{color: #000;text-decoration: none;background-color: yellow;}
 }
 .videos .videoStreams .streamTitle::before{}
 .videos .videoStreams .streamTitle p{margin: 0;}
-.videos .videoStreams .streamTitle .date{font-size: 0.5em;color: #a4a3a3;}
+.videos .videoStreams .streamTitle .cardRow{justify-content: space-between;margin: 0;}
+.videos .videoStreams .streamTitle .cardRow p{font-size: 0.5em;}
+.videos .videoStreams .streamTitle .date{/*! font-size: 0.5em; */color: #a4a3a3;}
 .videos .videoStreams .streamTitle .views{}
 
 .videos .videoStreams .playButtons{position: absolute;width: 100%;height: 70%;display: flex;justify-content: center;align-items: center;background-color: unset;z-index: 1;}
