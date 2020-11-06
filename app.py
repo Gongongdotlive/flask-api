@@ -1,7 +1,11 @@
 from flask import Flask, render_template, make_response
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/gong_new'
+db = SQLAlchemy(app)
+
 
 
 # THIS SHOULD BE A SEPERATE ROUTES FILE 
