@@ -1,0 +1,4 @@
+# ignore virtualenv files
+gongenv
+/gongenv
+gongenv/*

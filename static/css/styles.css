@@ -1,0 +1,386 @@
+*{}
+html{}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+ 
+}
+
+.mobile--only{
+  display:none;
+}
+
+.tablet--only{
+  display:none;
+}
+
+.desktop--only{
+  display: block;
+}
+
+a{}
+
+a:hover{color: #000;text-decoration: none;background-color: yellow;}
+.mobileMenu{
+  display: none;
+}
+.icon{
+  width: 1em !important;
+  height: 1em !important;
+  min-height: auto !important;;
+  object-fit: unset;
+}
+.button{background-color: antiquewhite;border-radius: 50px;font-size: 0.8em;padding: 0.6em 2em;}
+.help{color: #000;display: flex;margin: 1em 0;background-color: burlywood;padding: 6px;border-radius: 50px;align-items: center;justify-content: center;}
+.help p:hover{}
+.help p{margin: 0;margin-left: 1em;}
+.help img{}
+
+.loadMore{width: 100%;margin: 0 auto;text-align: center;}
+.loadMore a{}
+.loadMore img{display: none;}
+.loadMore .button p{margin: 0;}
+.content{width: calc(100% - 200px);margin: 0;margin-left: auto;padding: 0;position: relative;}
+.contentWrapper{display: flex;background-color: aliceblue;height: 100vh;overflow-x: hidden;justify-content: space-between;scrollbar-width: thin;}
+
+
+/* NAVIGATION */
+
+.navigation{width: 100%;display: flex;background-color: azure;position: fixed;z-index: 10;}
+.navigation .navItem{padding: 1em;text-decoration: none;color: #282424;}
+.mobileIcons{
+  display: none;
+}
+
+/* side navigation */
+.siderBar{width: 200px;display: flex;flex-direction: column;background-color: #eb6a07;justify-content: space-between;padding: 1em;min-width: 190px;/*! position: fixed; */height: calc(100vh - 60px);position: fixed;}
+.siderBar .appMenu{}
+.siderBar .appMenu .menuLink{color: #000;display: flex;align-items: center;margin-bottom: 1em;}
+.siderBar .appMenu .menuLink img{margin-right: 0.5em;}
+.siderBar .appMenu .menuLink p{margin: 0;font-weight: lighter;text-transform: capitalize;}
+.siderBar .logo{}
+.siderBar .logo img{
+  
+  animation-name: rotator-cuff;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+.siderBar .userMenu{}
+.siderBar .userMenu .search{width: 100%;background-color: yellow;border-radius: 50px;padding: 7.2px;display: flex;justify-content: flex-end;}
+.siderBar .userMenu .upload{}
+.siderBar .userMenu .userProfile{}
+
+/* main content */
+
+
+  /*Videos  */
+
+.content .videos{margin-bottom: 4rem;}
+.videos{}
+.videos .videoStreams{background-color: red;border-radius: 10px;min-height: 50vh;overflow: hidden;position: relative;}
+.videos .videoStreams::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#f000,#2b2b32);
+  z-index: 0;
+}
+.videos .videoStreams .videoSS{height: 100%;width: 100%;object-fit: cover;position: absolute;z-index: 0;mix-blend-mode: hard-light;}
+.videos .videoStreams .streamTitle{position: absolute;bottom: 0;padding: 1em;color: #fff;width: 100%;z-index: 1;}
+.videos .videoStreams .streamTitle::after{
+  content: '';
+}
+.videos .videoStreams .streamTitle::before{}
+.videos .videoStreams .streamTitle p{margin: 0;}
+.videos .videoStreams .streamTitle .date{font-size: 0.5em;color: #a4a3a3;}
+.videos .videoStreams .streamTitle .views{}
+
+.videos .videoStreams .playButtons{position: absolute;width: 100%;height: 70%;display: flex;justify-content: center;align-items: center;background-color: unset;z-index: 1;}
+.videos .videoStreams .playButtons a{background-color: aliceblue;border-radius: 50%;width: 3em;height: 3em;display: flex;align-items: center;justify-content: center;}
+.videos .videoStreams .playButtons a img{}
+.videos .videoStreams .playButtons .pause{display: none;}
+.videos .videoStreams .playButtons .play{}
+.content .streams .videoAd{margin-bottom: 4em;background-image: url(../img/soulni-gif-small1.gif);min-height: 66vh;background-repeat: no-repeat;background-size: contain;border-radius: 15px;display: flex;align-items: center;padding: 1em;background-position: right;background-color: #eb6a07;}
+.content .streams .videoAd .videoIntro{width: 35%;color: aliceblue;}
+.content .streams .videoAd .videoIntro h1{font-size: 3rem;font-weight: bold;}
+.content .streams .videoAd .videoIntro a{}
+.content .streams .videoAd .videoIntro p{color: #fff;line-height: 1.2;}
+
+.content .streams .contentHeading{}
+.content .streams .contentHeading h3{font-weight: bold;}
+.content .streams{padding: 1em;padding-top: 5em;margin-bottom: 5em;overflow-x: hidden;}
+.content .stream{background-color: aliceblue;margin-bottom: 1em;min-width: 135px;border-radius: 5px;overflow: hidden;position: relative;shape-rendering: optimizespeed;}
+.content .stream:hover{
+  
+  box-shadow: 2px 4px 1px 0px #e05a09;
+  transition: box-shadow 0.3s ease-in;
+}
+
+.content .stream .artistName{font-weight: bold;}
+.content .stream .date{display: none;}
+.content .stream h4{}
+.content .stream img{min-height: 150px;object-fit: cover;height: 150px;width: 200px;}
+.content .stream .playButtons{position: absolute;/*! opacity: 0; */top: 0;left: 0;right: 0;display: flex;justify-content: center;align-items: center;height: 68%;opacity: 0;}
+.content .stream .playButtons:hover{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.content .stream .playButtons img{}
+.content .stream .playButtons .pause,
+.content .stream .playButtons .play{background-color: #fff;/*! padding: 1em; */border-radius: 50%;width: 50px;height: 50px;display: flex;justify-content: center;align-items: center;}
+
+.content .stream .playButtons .pause{display: none;}
+.content .stream .playButtons .play{}
+.content .stream .songTitle{font-size: 0.6rem;color: #a4a5a6;}
+.content .stream .title{padding: 0.5em;}
+.content .stream .title p{margin: 0;text-transform: capitalize;font-size: 0.7rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+/* fixed soundcloud player  */
+.soundCPlayer{height: 60px;width: 100vw;background-color: #f0bf80f7;position: fixed;bottom: 0;display: flex;align-items: center;justify-content: space-between;/*! padding: 0 1em; */z-index: 100;}
+.soundCPlayer .artistInfo{height: 100%;display: flex;}
+.soundCPlayer .artistInfo p{margin: 0;font-size: 0.8rem;}
+.soundCPlayer .artistInfo img{width: 5em;height: 100%;object-fit: cover;}
+.soundCPlayer .artistInfo .songMeta{padding: 0.5em;}
+.soundCPlayer .artistInfo .songMeta .songArtist{white-space: nowrap;}
+.soundCPlayer .artistInfo .songMeta .songTitle{}
+
+
+.soundCPlayer .mediaBtns{display: flex;align-items: center;}
+.soundCPlayer .mediaBtns a{display: flex;}
+.soundCPlayer .mediaBtns .next{}
+.soundCPlayer .mediaBtns .prev{}
+.soundCPlayer .mediaBtns .play{}
+.soundCPlayer .mediaBtns .playButtons{}
+.soundCPlayer .mediaBtns .playButtons .pause{display: none;}
+.soundCPlayer .mediaBtns .playButtons .play{}
+
+
+.soundCPlayer .mediaBtns .playButtons .pause,
+.soundCPlayer .mediaBtns .playButtons .play{background-color: aliceblue;width: 2em;height: 2em;border-radius: 50%;justify-content: center;align-items: center;margin: 0 1em;}
+.soundCPlayer .metaInfo{margin-right: 1em;display: flex;}
+.soundCPlayer .metaInfo .metaMenu{background-color: antiquewhite;padding: 5px;border-radius: 50px;}
+.soundCPlayer .metaInfo .metaMenu a{color: #000;margin: 0 1em;text-decoration: none;}
+.soundCPlayer .metaInfo .progress{}
+
+.soundCPlayer .mediaBtns .volumes{}
+.soundCPlayer .mediaBtns .volumes .mute,
+.soundCPlayer .mediaBtns .volumes .unmute{margin-left: 1em;}
+
+.soundCPlayer .mediaBtns .volumes .mute{
+  display:none;
+}
+.soundCPlayer .mediaBtns .volumes .unmute{}
+
+
+
+
+/* DARK MODE - Dark side till I die! */
+
+.dark-mode .contentWrapper{}
+.dark-mode .siderBar{}
+.dark-mode .soundCPlayer{}
+.dark-mode .contentWrapper .navigation{}
+.dark-mode .contentWrapper .navigation .navItem{}
+.dark-mode .content .stream{}
+.dark-mode .content .stream .title{}
+.dark-mode .content .stream .title .artistName{}
+.dark-mode .content .stream .title .date{}
+.dark-mode .content .stream .title .songTitle{}
+.dark-mode .content .streams .videoAd .videoIntro{}
+.content .streams .videoAd{}
+
+
+@keyframes rotator-cuff{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

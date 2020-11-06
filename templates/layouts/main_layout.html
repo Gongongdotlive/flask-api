@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>Gongong Live streams page</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/swiper.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+	<style>
+		.loading .loader{
+			transform: translateX(0%);
+			transition: transform 0.3s ease-in;
+
+		}
+		.loader{
+			width: 100vw;
+			height: 100vh;
+			background-color: #000;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			z-index: 1000;
+			transform: translateX(-100%);
+			transition: transform 0.3s ease-out;
+		}
+
+		.loader h1{
+			font-size: 4vw;
+			height: 2em;
+			overflow: hidden;
+			position: relative;
+			width: 100vw;
+			text-align: center;
+		}
+
+		.loader h1 span{
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+		}
+	</style>
+</head>
+<body class="{{ bodyClass }}">
+<div class="loader">
+	<h1>
+		<span>gongong</span>
+	</h1>
+</div>
+	{% block content %}{% endblock %}
+<script src="{{ url_for('static', filename='vendor/js/underscore.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/jquery.gsap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/TweenMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/TimelineMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/swiper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/locomotive-scroll.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<script>
+	$(window).load(function(){
+$('body').removeClass('loading');
+console.log('finished loading')
+
+})
+
+	// only on slow desktop application
+
+	let scroll = new LocomotiveScroll({
+		
+	})
+</script>
+</body>
+</html>

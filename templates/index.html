@@ -1,0 +1,18 @@
+{% extends "layouts/main_layout.html" %}
+{% block content %}
+	<main class="contentWrapper">
+		{% include 'partials/sidebar.html' %}
+		<div class="content">
+			<!-- nav -->
+
+			{% include 'partials/nav.html' %}
+
+			<!-- main content -->
+			{% include 'partials/content.html' %}
+		</div>
+	</main>
+
+	{% include 'partials/music_player.html' %}
+
+
+{% endblock %}
