@@ -121,9 +121,10 @@ a:hover{color: #000;text-decoration: none;background-color: yellow;}
 .content .stream{background-color: aliceblue;margin-bottom: 1em;min-width: 135px;border-radius: 5px;overflow: hidden;position: relative;shape-rendering: optimizespeed;}
 .content .stream:hover{
   
-  box-shadow: 2px 4px 1px 0px #e05a09;
-  transition: box-shadow 0.3s ease-in;
+  /*! background-color: black; */
 }
+
+.content .stream:hover >img{mix-blend-mode: hard-light;}
 
 .content .stream .artistName{font-weight: bold;}
 .content .stream .date{display: none;}

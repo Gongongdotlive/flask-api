@@ -1,22 +1,39 @@
-from flask import Flask, render_template, make_response
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, make_response, jsonify, request
+# from werkzeug import generate_password_hash,check_password_hash
+import pymysql
+from flaskext.mysql import MySQL
 
+# from routes import routes
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/gong_new'
-db = SQLAlchemy(app)
 
-
+mysql = MySQL()
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_DB'] = 'gong_new'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
 
 # THIS SHOULD BE A SEPERATE ROUTES FILE 
 
-@app.route('/')
+@app.route('/api/v1/users/all')
 def index():
 
-    resp = make_response(render_template('index.html', bodyClass="loading"))
-    # resp.set_cookie("audioAllowed", "true")
+    try:
+        conn = mysql.connect()
+        cur = conn.cursor(pymysql.cursors.DictCursor)
+        cur.execute('SELECT * from wp_wswebinars_subscribers;')
+        rows = cur.fetchall()
+        resp = jsonify(rows)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
 
-    return resp
+    finally:
+        cur.close()
+        conn.close()
 
 @app.errorhandler(404)
 def page_not_found(error):
