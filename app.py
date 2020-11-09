@@ -15,10 +15,18 @@ app.config['MYSQL_DATABASE_DB'] = 'gong_new'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
-# THIS SHOULD BE A SEPERATE ROUTES FILE 
+# THIS SHOULD BE A SEPERATE ROUTES FILE
+
+
+@app.route('/')
+def index():
+
+    resp = make_response(render_template('index.html', bodyClass="loading"))
+    return resp
+
 
 @app.route('/api/v1/users/all')
-def index():
+def api():
 
     try:
         conn = mysql.connect()
@@ -34,6 +42,32 @@ def index():
     finally:
         cur.close()
         conn.close()
+
+
+# fetch all emails only
+@app.route('/api/v1/users/emails')
+def emails():
+
+    try:
+        conn = mysql.connect()
+        cur = conn.cursor(pymysql.cursors.DictCursor)
+        # cur.execute('SELECT EMAIL from wp_wswebinars_subscribers WHERE WEBINAR_ID="10";')
+        cur.execute('SELECT EMAIL from wp_wswebinars_subscribers;')
+        rows = cur.fetchall()
+        resp = jsonify(rows)
+        return resp
+
+        # resp.status_code = 200
+        
+    except Exception as e:
+        print(e)
+
+    finally:
+        cur.close()
+        conn.close()
+
+# fetch all
+
 
 @app.errorhandler(404)
 def page_not_found(error):

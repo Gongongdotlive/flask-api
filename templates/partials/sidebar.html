@@ -22,13 +22,17 @@
 		
 	</div>
 	<div class="userMenu">
-		<div class="search">
-			<img src="{{ url_for('static', filename='img/icons/icon_search2.png') }}" alt="" class="img-fluid icon">
-
-		</div>
-		<div class="upload">
+<!-- 		<div class="searchForm">
 			<form action="#">
-				<input type="file" class="customFileUpload">
+				<label for="search-btn" class="">search</label>
+				<input type="search" class="search" id="search-btn" name="search-btn" placeholder="SEARCH">
+			</form>
+			<img src="{{ url_for('static', filename='img/icons/icon_search2.png') }}" alt="" class="img-fluid icon">
+		</div> -->
+		<div class="uploadForm">
+			<form action="#">
+				<label for="upload-btn" class="upload">Upload</label>
+				<input type="file" class="customFileUpload" id="upload-btn" name="upload-btn" hidden="">
 			</form>
 			<!-- <a href="#" class="btn button">UPLOAD</a> -->
 		</div>

@@ -72,8 +72,8 @@ a:hover{color: #000;text-decoration: none;background-color: yellow;}
   animation-fill-mode: forwards;
 }
 .siderBar .userMenu{}
-.siderBar .userMenu .search{width: 100%;background-color: yellow;border-radius: 50px;padding: 7.2px;display: flex;justify-content: flex-end;}
-.siderBar .userMenu .upload{}
+.siderBar .userMenu .search{width: 100%;background-color: yellow;border-radius: 50px;padding: 7.2px;display: flex;justify-content: flex-end;margin-bottom: 1em;}
+.siderBar .userMenu .upload{width: 100%;background-color: #ffff7c;border-radius: 50px;padding: 3.2px;display: flex;justify-content: center;}
 .siderBar .userMenu .userProfile{}
 
 /* main content */
